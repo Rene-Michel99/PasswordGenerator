@@ -196,6 +196,11 @@ input[type="checkbox"] {
   }
 }
 
+hr {
+  color: var(--color-bg);
+  width: 100%;
+}
+
 @media screen and (max-width: 1024px){
   .input-box {
     display: grid;
