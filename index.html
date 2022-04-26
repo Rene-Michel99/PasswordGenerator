@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen" />
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Password Generator</h2>
+            <div class="custom-area">
+                <div class="input-box">
+                    <p>Password length</p>
+                    <input id="lenPassword" type="number" min="4" max="12">
+                </div>
+                <div class="input-box">
+                    <p>Fit pattern</p>
+                    <input id="pattern" type="text">
+                </div>
+            </div>
+            <div class="list-checkbox">
+                <label>
+                    <input class="checkmark" type="checkbox" id="lowercase">
+                    Include lowercase letters
+                </label>
+                <label>
+                    <input class="checkmark" type="checkbox" id="uppercase">
+                    Include uppercase letters
+                </label>
+                <label>
+                    <input class="checkmark" type="checkbox" id="numbers">
+                    Include numbers
+                </label>
+                <label>
+                    <input class="checkmark" type="checkbox" id="symbols">
+                    Include symbols
+                </label>
+            </div>
+            <div class="submit-box ">
+                <button class="btn btn-primary" onclick="retrievePassword()">Generate</button>
+            </div>
+            <h3 id="password">######</h3>
+        </div>
+    </body>
+</html>

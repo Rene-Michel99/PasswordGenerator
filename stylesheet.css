@@ -1,0 +1,216 @@
+* {
+    font-family: monospace, sans-serif;
+    padding: 0;
+    margin: 0;
+    color: black;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+:root {
+    --color-bg: #1d1d1d;
+    --color-bg-variant: #e9e1e0;
+    --color-primary: #1a568f;
+    --color-primary-variant: #4b1b18;
+}
+
+body {
+    background-color: var(--color-bg);
+}
+
+.container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    border-radius: 1.5rem;
+    border-top: 1px solid transparent;
+    background-color: var(--color-bg-variant);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.container h2{
+    text-align: center;
+}
+
+.list-checkbox {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.2rem;
+}
+
+label{
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+    font-size: 1rem;
+}
+
+input[type="checkbox"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    /* Remove most all native input styles */
+    appearance: none;
+    /* For iOS < 15 */
+    background-color: var(--color-bg-variant);
+    /* Not removed via appearance */
+    margin: 0;
+  
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+  
+    display: grid;
+    place-content: center;
+  }
+  
+  input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--color-primary);
+    /* Windows High Contrast Mode */
+    background-color: CanvasText;
+  }
+  
+  input[type="checkbox"]:checked::before {
+    transform: scale(1);
+  }
+  
+  input[type="checkbox"]:focus {
+    outline: max(2px, 0.15em) solid currentColor;
+    outline-offset: max(2px, 0.15em);
+  }
+  
+  input[type="checkbox"]:disabled {
+    --form-control-color: var(--form-control-disabled);
+  
+    color: var(--form-control-disabled);
+    cursor: not-allowed;
+  }
+
+  .btn {
+    width: max-content;
+    display: inline-block;
+    color: var(--color-primary);
+    padding: 0.75rem 1.2rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    border: 1px solid var(--color-primary);
+    transition: var(--transition);
+  }
+  
+  .btn:hover {
+    transform: scale(1.2);
+  }
+  
+  .btn-primary {
+    background: var(--color-primary);
+    color: var(--color-bg);
+  }
+
+.input-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 1rem;
+}
+
+.input-box input {
+  max-width: 50%;
+  margin: 0.2rem;
+  border-radius: 0.5rem;
+  background: transparent;
+  border: 2px solid var(--color-bg);
+  resize: none;
+  max-width: 50%;
+}
+
+.input-box p {
+  margin: 0.2rem;
+}
+
+.submit-box {
+    display: flex;
+    flex-direction: row;
+    gap: 0.8rem;
+}
+
+#password {
+  border: 2px solid var(--color-bg);
+  border-radius: 0.5rem;
+  width: 7rem;
+  height: 1.5rem;
+  margin: 1rem;
+}
+
+@media screen and (max-width: 600px){
+  .list-checkbox {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .input-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 1rem;
+    width: 100%;
+  }
+  
+  .input-box input {
+    margin: 0rem;
+    justify-self: end;
+  }
+
+  .input-box input, p {
+    margin: 0rem;
+    justify-self: start;
+  }
+
+  .container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0.8rem;
+    border-radius: 1.5rem;
+    border-top: 1px solid transparent;
+    background-color: var(--color-bg-variant);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 1024px){
+  .input-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 1rem;
+    width: 100%;
+  }
+  
+  .input-box input {
+    margin: 0rem;
+    justify-self: end;
+  }
+
+  .input-box input, p {
+    margin: 0rem;
+    justify-self: start;
+  }
+}
